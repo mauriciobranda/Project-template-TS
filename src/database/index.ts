@@ -1,3 +1,3 @@
 import { createConnection } from 'typeorm';
 
-createConnection();
+createConnection(); //procura arquivo ORM config e vai executar as config de banco de dados
