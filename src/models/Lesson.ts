@@ -4,7 +4,10 @@ import {
     CreateDateColumn,
     UpdateDateColumn,
     PrimaryGeneratedColumn,
+    OneToOne,
+    JoinColumn,
   } from 'typeorm';
+import { Content } from './Content';
 
 @Entity('lesson')
 export default class Lesson {
@@ -16,6 +19,13 @@ export default class Lesson {
     unique: true,
   })
   description: string;
+
+  @OneToOne(() => Content)
+  @JoinColumn()
+  content: Content;
+
+  /*@OneToOne(type => Content, lesson => Lesson)
+  content: Content;*/
 
   @CreateDateColumn({ name: 'created_At' })
   createdAt: Date;
