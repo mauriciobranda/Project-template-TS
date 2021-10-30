@@ -8,6 +8,7 @@ import {
 } from 'typeorm';
 import Lesson from './Lesson';
 
+
 @Entity('class')
 export default class Class {
   @PrimaryGeneratedColumn('uuid')
