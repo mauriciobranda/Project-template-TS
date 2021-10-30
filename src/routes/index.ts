@@ -5,6 +5,6 @@ import lessonRouter from './lesson.routes';
 const routes = Router();
 
 routes.use('/class', classRouter);
-routes.use('/lesson', classRouter);
+routes.use('/lesson', lessonRouter);
 
 export default routes;

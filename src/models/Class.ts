@@ -4,7 +4,9 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   PrimaryGeneratedColumn,
+  OneToMany,
 } from 'typeorm';
+import Lesson from './Lesson';
 
 @Entity('class')
 export default class Class {
@@ -22,6 +24,11 @@ export default class Class {
 
   @Column()
   exp: number;
+
+  @OneToMany(type => Lesson, classe => Class)
+  lessons: Lesson[];
+
+//Class tem muitos lessons
 
   @CreateDateColumn({ name: 'created_At' })
   createdAt: Date;

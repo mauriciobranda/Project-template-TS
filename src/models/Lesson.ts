@@ -6,7 +6,11 @@ import {
     PrimaryGeneratedColumn,
     OneToOne,
     JoinColumn,
+    ManyToOne,
+    OneToMany,
   } from 'typeorm';
+
+import Class from './Class';
 import { Content } from './Content';
 
 @Entity('lesson')
@@ -24,8 +28,11 @@ export default class Lesson {
   @JoinColumn()
   content: Content;
 
-  /*@OneToOne(type => Content, lesson => Lesson)
-  content: Content;*/
+
+  @ManyToOne(type => Class, lessons => Lesson)
+  classe: Class
+//muitas lessons do tipo Lesson para uma classe Class
+
 
   @CreateDateColumn({ name: 'created_At' })
   createdAt: Date;

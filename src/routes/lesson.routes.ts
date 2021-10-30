@@ -5,12 +5,15 @@ import { Student } from '../models/Student';
 
 const lessonRouter = Router();
 
-lessonRouter.get('/lessons', async (req, res) => {
-    res.json(await getRepository(Student).find());
-})
 
-lessonRouter.post('/lessons', (req, res) => {
+lessonRouter.post('/', (req, res) => {
     res.send('Criar uma lesson');
 })
+
+lessonRouter.get('/', async (request, response) => {
+    //response.json(await getRepository(Lesson).find());
+    response.send("licoess");
+
+  });
 
 export default lessonRouter; //exporto para chamar na minha index.ts
