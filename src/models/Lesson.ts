@@ -29,7 +29,7 @@ export default class Lesson {
   content: Content;
 
 
-  @ManyToOne(type => Class, lessons => Lesson)
+  @ManyToOne(type => Class, lessons => Lesson, {eager: true} )
   classe: Class
 //muitas lessons do tipo Lesson para uma classe Class
 

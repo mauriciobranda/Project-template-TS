@@ -4,7 +4,10 @@ import {
     CreateDateColumn,
     UpdateDateColumn,
     PrimaryGeneratedColumn,
+    ManyToMany,
+    JoinTable,
   } from 'typeorm';
+import Class from './Class';
 
 @Entity('student')
 export class Student {
@@ -23,5 +26,9 @@ export class Student {
     unique: true,
     })
     key: string;
+
+    @ManyToMany(type => Class)
+    @JoinTable()
+    classes: Class;
 
 }
