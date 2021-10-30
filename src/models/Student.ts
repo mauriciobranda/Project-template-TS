@@ -8,6 +8,7 @@ import {
     JoinTable,
   } from 'typeorm';
 import Class from './Class';
+import {IsEmail} from 'class-validator';
 
 @Entity('student')
 export class Student {
@@ -26,6 +27,13 @@ export class Student {
     unique: true,
     })
     key: string;
+
+    @Column({
+    length: 50,
+    unique: true,
+    })
+    @IsEmail()
+    email: string;
 
     @ManyToMany(type => Class)
     @JoinTable()
