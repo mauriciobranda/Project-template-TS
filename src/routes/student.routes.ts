@@ -5,8 +5,8 @@ import { Student } from "../models/Student";
 
 const studentRoutes = Router()
 
-studentRoutes.get('/', (req, res) => {
-    res.send('Hello from student routes')
+studentRoutes.get('/', async (req, res) => {
+    res.json(await getRepository(Student).find());
 })
 
 studentRoutes.post('/', async (request, response) => {
@@ -16,7 +16,7 @@ studentRoutes.post('/', async (request, response) => {
         const { key, name, email } = request.body //desestrutura e pega os dados do corpo da requisição
         const student = repo.create({
              key, name, email
-        }) //cria um estudante com os dados do corpo da requisição
+        }) 
 
         const errors = await validate(student) //valida o estudante
 

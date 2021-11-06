@@ -18,8 +18,6 @@ lessonRouter.post('/', async (request, response) => {
 
 lessonRouter.get('/', async (request, response) => {
     response.json(await getRepository(Lesson).find());
-    //response.send("licoess");
-
   });
 
 export default lessonRouter; //exporto para chamar na minha index.ts
