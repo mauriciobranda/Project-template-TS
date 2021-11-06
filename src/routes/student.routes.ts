@@ -9,6 +9,11 @@ studentRoutes.get('/', async (req, res) => {
     res.json(await getRepository(Student).find());
 })
 
+studentRoutes.get('/:id', async (req, res) => {
+    res.json(await getRepository(Student).findOne(req.params.id));
+})
+
+
 studentRoutes.post('/', async (request, response) => {
     try{
         const repo = await getRepository(Student) //cria um repositorio de estudantes
