@@ -3,12 +3,12 @@ import { getRepository, getCustomRepository } from 'typeorm';
 import Class from '../models/Class';
 import ClassRepository from '../repositories/ClassRepository';
 
-import {getConnection} from "typeorm";
-
 
 const classRouter = Router();
 
 classRouter.post('/', async (request, response) => {
+  console.log('Add to database');
+
   try {
     
     console.log(request.body);
@@ -20,9 +20,8 @@ classRouter.post('/', async (request, response) => {
   }
 });
 
-
-
 classRouter.get('/', async (request, response) => {
+  console.log("Gettt");
   response.json(await getRepository(Class).find());
   //response.send("Retorno do GET!");
 });

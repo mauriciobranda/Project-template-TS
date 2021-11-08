@@ -19,9 +19,9 @@ import {
     @Column()
     cnpj: string;
 
-    @CreateDateColumn({ name: 'created_At' })
+    @CreateDateColumn({ name: 'created_at' })
     createdAt: Date;
   
-    @UpdateDateColumn({ name: 'update_At' })
+    @UpdateDateColumn({ name: 'update_at' })
     updatedAt: Date;
     }
