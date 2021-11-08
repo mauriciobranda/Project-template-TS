@@ -1,8 +1,8 @@
 {
-  "type": "mysql",
+  "type": "postgres",
   "host": "localhost",
-  "port": 3306,
-  "username": "root",
+  "port": 5433,
+  "username": "postgres",
   "password": "neuer@123",
   "database": "onion",
   "entities": [
@@ -18,3 +18,5 @@
   "entitiesDir": "src/models"
   }
 }
+
+
